@@ -9,18 +9,18 @@
 </head>
 
 
-<body class="container">
+<body class="container-flex">
 <header>
     <h1 class="text-center">Coffee!</h1>
 </header>
     <hr>
-    <div class="row row-col-2">
+    <div class="row">
 <!--        Selected Roasts-->
-        <section class="d-flex" style="width: 50%">
-            <div id="coffees"></div>
+        <section class="d-flex col align-self-center justify-content-center">
+            <div id="coffees" class="row align-content-start"></div>
         </section>
 
-        <section style="width: 50%">
+        <section class="col">
             <article class="card p-3">
                 <label for="roast-selection">Roast</label>
                     <select id="roast-selection"

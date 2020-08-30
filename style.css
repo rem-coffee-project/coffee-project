@@ -1,7 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
-/*    border: 1px solid black;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*border: 1px solid black;*/
 }
 table {
     border-collapse: collapse;
@@ -11,4 +11,11 @@ table {
 td, th {
     border: 1px solid black;
     padding: 5px 10px;
+}
+#coffees {
+    margin: 0 0 0 15px;
+
+}
+#roastText {
+    margin: 0 0 0 15px;
 }

@@ -14,10 +14,12 @@
 // }
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee d-flex align-items-center">';
+    // var html = '<div class="coffee d-flex justify-content-center align-items-center col-lg-6 col-sm-12">';
+    //TODO Maybe suggest coffee based on button click
+    var html = '<button type="button" class="coffee btn btn-outline-dark d-flex justify-content-center align-items-center col-lg-6 col-sm-12">';
     html += '<h4>' + coffee.name + '</h4> ';
-    html += '<p class="m-0">' + coffee.roast + '</p>';
-    html += '</div>';
+    html += '<p id="roastText">(' + coffee.roast + ')</p>';
+    html += '</button>';
 
     return html;
 }
