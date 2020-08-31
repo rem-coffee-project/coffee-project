@@ -1,17 +1,4 @@
 "use strict"
-// function updateResult(query) {
-//     // let resultList = document.querySelector(".result");
-//     // resultList.innerHTML = "";
-//
-//     coffees.map(function(algo){
-//         query.split(" ").map(function (word){
-//             if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
-//                 html += algo;
-//             }
-//         })
-//     })
-//
-// }
 
 function renderCoffee(coffee) {
     // var html = '<div class="coffee d-flex justify-content-center align-items-center col-lg-6 col-sm-12">';
@@ -48,6 +35,38 @@ function updateCoffees(e) {
     }
 }
 
+function validateSubmission(e){
+    e.preventDefault();
+    var submittedRoast = newCoffeeRoastLevel.value;
+    var submittedName = newCoffeeName.value.toLowerCase();
+    var redundancyCheck = [];
+
+    //Check for empty string submission
+    while (submittedName === " " || submittedName === '') {
+        let name = prompt("Looks like you haven't given this new brew a name. What would you like to call it?");
+        submittedName = name;
+    }
+    //Check for pre-existing name and roast combination
+    //Narrow current coffee list down to submitted roast
+    coffees.forEach(function(coffee) {
+        if (coffee.roast === submittedRoast) {
+            redundancyCheck.push(coffee.name.toLowerCase());
+        }
+    })
+    console.log(redundancyCheck);
+    //Check for name match in the truncated list of coffees
+    let checkName = redundancyCheck.includes(submittedName)
+    if(checkName){
+        alert("Looks like we already have that combination of coffee and roast level in our inventory.\nPerhaps you'd like to give your brew a different name and resubmit?")
+    }else{
+        addNewCoffee(submittedRoast, submittedName);
+    }
+}
+
+function addNewCoffee(roast, blend){
+    console.log("Roast: " + roast + " Blend: " + blend);
+}
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -69,8 +88,10 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var newCoffeeSubmission = document.getElementById('newCoffeeRequest');
 
 tbody.innerHTML = renderCoffeeList(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('input', updateCoffees);
+newCoffeeSubmission.addEventListener('click', validateSubmission);
