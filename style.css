@@ -1,21 +1,31 @@
-*{
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*border: 1px solid black;*/
-}
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    margin: 15px 0;*/
+/*}*/
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
+/*td, th {*/
+/*    border: 1px solid black;*/
+/*    padding: 5px 10px;*/
+/*}*/
 #coffees {
     margin: 0 0 0 15px;
-
+    color: goldenrod;
+    z-index: 2;
 }
 #roastText {
     margin: 0 0 0 15px;
+}
+
+header {
+    font-family: 'Libre Baskerville', serif;
+    text-shadow:5px 5px 10px greenyellow;
+    background-image: url("https://c1.wallpaperflare.com/preview/571/899/740/beans-coffee-food.jpg");
+}
+
+#theCup {
+    background-image: url("https://c0.wallpaperflare.com/preview/455/119/639/brown-ceramic-teacup-with-coffee.jpg");
+}
+
+#bigBox{
+    background-image: url("https://c1.wallpaperflare.com/preview/977/485/94/cup-coffee-caffeine-drink.jpg");
 }

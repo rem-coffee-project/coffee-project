@@ -3,7 +3,7 @@
 function renderCoffee(coffee) {
     // var html = '<div class="coffee d-flex justify-content-center align-items-center col-lg-6 col-sm-12">';
     //TODO Maybe suggest coffee based on button click
-    var html = '<button type="button" class="coffee btn btn-outline-dark d-flex justify-content-center align-items-center col-lg-6 col-sm-12">';
+    var html = '<button type="button" class="coffee btn btn-outline-light d-flex justify-content-center align-items-center col-lg-6 col-sm-12">';
     html += '<h4>' + coffee.name + '</h4> ';
     html += '<p id="roastText">(' + coffee.roast + ')</p>';
     html += '</button>';
@@ -44,7 +44,7 @@ function validateSubmission(e){
     //Check for empty string submission
     while (submittedName === " " || submittedName === '') {
         let name = prompt("Looks like you haven't given this new brew a name. What would you like to call it?");
-        submittedName = name;
+        submittedName = name.toLowerCase();
     }
     //Check for pre-existing name and roast combination
     //Narrow current coffee list down to submitted roast
@@ -63,8 +63,36 @@ function validateSubmission(e){
     }
 }
 
-function addNewCoffee(roast, blend){
-    console.log("Roast: " + roast + " Blend: " + blend);
+function addNewCoffee(selectedRoast, blend){
+    //Capitalize the new  coffee's blend name
+    let newBlend = blend.replace(/\w\S*/g, function(txt)
+        {
+            if (txt.match(/^(e|y|de|lo|los|la|las|do|dos|da|das|del|van|von|bin|le)$/gi)) return txt.toLowerCase();
+            else return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+        //Simpler version of above
+        //capitalize_Words
+        // function capitalize_Words(str)
+        // {
+        //     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        // }
+    //Find where to insert the new coffee into the coffees array based on roast
+    let insetPoint = -1;
+    do {
+        coffees.forEach(function(coffee) {
+            if (coffee.roast === selectedRoast) {
+                insetPoint = coffees.indexOf(coffee) + 1;
+            }
+        })
+    }while(insetPoint === -1)
+
+    //Format new coffee for inclusion into the coffees array
+    let newCoffee = {id: coffees.length+1, name: newBlend, roast: selectedRoast}
+
+    //Add new coffee to inventory (coffees array)
+    coffees.splice(insetPoint, 0, newCoffee)
+    alert("Congratulations! You have added " + newBlend + " to our selection of " + selectedRoast + " roasts.");
+    tbody.innerHTML = renderCoffeeList(coffees)
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide

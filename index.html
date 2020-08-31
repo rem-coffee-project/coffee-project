@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CaffeineUp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body class="container-flex">
 <header>
-    <h1 class="text-center">Coffee!</h1>
+    <h1 class="text-center">Io Java!</h1>
 </header>
     <hr>
-    <div class="row">
+    <div id="bigBox" class="row">
 <!--        Selected Roasts-->
-        <section class="d-flex col align-self-center justify-content-center">
+        <section id="theCup" class="d-flex col align-self-center justify-content-center">
             <div id="coffees" class="row align-content-start"></div>
         </section>
 
         <section class="col">
-            <article class="card p-3">
+            <article class="card bg-dark p-3">
+                <h4 class="text-center">Search our Coffees</h4>
                 <label for="roast-selection">Roast</label>
                     <select id="roast-selection"
                             class="custom-select custom-select-sm">
@@ -40,8 +42,8 @@
             </article>
 
 <!--        ADD Coffee Input -->
-            <article class="card p-3">
-                <h3 class="text-center">Add a Coffee</h3>
+            <article class="card bg-dark p-3">
+                <h4 class="text-center">Add a Coffee</h4>
                 <label for="newCoffeeRoastLevel">Roast</label>
                     <select id="newCoffeeRoastLevel"
                             class="custom-select custom-select-sm">
