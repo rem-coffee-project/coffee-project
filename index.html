@@ -42,20 +42,18 @@
 <!--        ADD Coffee Input -->
             <article class="card p-3">
                 <h3 class="text-center">Add a Coffee</h3>
-                <label for="roast-selection">Roast</label>
-                <select id="roastSelectionAdd"
-                        class="custom-select custom-select-sm">
-                    <option>All</option>
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select>
-                <label for="roast-selection">Coffee Name</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control">
-                </div>
-
-                <input id="submit" type="submit" />
+                <label for="newCoffeeRoastLevel">Roast</label>
+                    <select id="newCoffeeRoastLevel"
+                            class="custom-select custom-select-sm">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                <label for="newCoffeeName">Coffee Name</label>
+                    <div class="input-group mb-3">
+                        <input id="newCoffeeName" type="text" class="form-control">
+                    </div>
+                <input id="newCoffeeRequest" type="submit" />
             </article>
 
         </section>
