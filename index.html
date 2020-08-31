@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 
 
 <body class="container-flex">
-<header>
+<header class="mb-0">
     <h1 class="text-center">Io Java!</h1>
 </header>
     <hr>
@@ -32,7 +33,7 @@
                         <option>medium</option>
                         <option>dark</option>
                     </select>
-                <label for="roast-selection">Coffee Name</label>
+                <label class="mt-3" for="roast-selection">Coffee Name</label>
                 <div class="input-group mb-3">
                     <input id="usersChoice" type="search" class="form-control">
                 </div>
@@ -50,11 +51,11 @@
                         <option>medium</option>
                         <option>dark</option>
                     </select>
-                <label for="newCoffeeName">Coffee Name</label>
+                <label class="mt-3" for="newCoffeeName">Coffee Name</label>
                     <div class="input-group mb-3">
                         <input id="newCoffeeName" type="text" class="form-control">
                     </div>
-                <input id="newCoffeeRequest" type="submit" />
+                <button class="align-self-center col-sm-4" id="newCoffeeRequest" type="submit"><i class="fas fa-mug-hot"></i>   Name that brew!   <i class="fas fa-mug-hot"></i></button>
             </article>
         </section>
     </div>
