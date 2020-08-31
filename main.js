@@ -26,19 +26,22 @@ function updateCoffees(e) {
     var filteredCoffees = [];
 
     if(selectedRoast === "All"){
-        tbody.innerHTML = renderCoffeeList(coffees)
+        filteredCoffees = coffees;
     }else {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
-        tbody.innerHTML = renderCoffeeList(filteredCoffees)
+
         })
     }
-    var searchCoffees = coffees.filter(function(e) {
+    tbody.innerHTML = renderCoffeeList(filteredCoffees);
+    var searchCoffees = filteredCoffees.filter(function(e) {
         return (e.name.toLowerCase().includes(searchBar));
     });
-    tbody.innerHTML =  renderCoffeeList(searchCoffees);
+    if (searchCoffees.length < filteredCoffees.length){
+        tbody.innerHTML =  renderCoffeeList(searchCoffees);
+    }
     console.log(searchCoffees);
 }
 
