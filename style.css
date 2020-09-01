@@ -1,9 +1,29 @@
-body{
-    background-color: #2E2F37;
-    background-image: url("https://image.freepik.com/free-photo/top-view-coffee-accessories-table_23-2148336708.jpg");
-    background-size: auto;
-    background-position: center;
-    /*fill-opacity: .75;*/
+body {
+    background-color: #411f1f;
+}
+
+.main-header {
+    background-image: url("https://c1.wallpaperflare.com/preview/977/485/94/cup-coffee-caffeine-drink.jpg");
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+h1 {
+    /*margin: 0 0 20px 0;*/
+    color: #dbcbbd;
+    font-family: 'Libre Baskerville', serif;
+}
+
+img {
+    background-color: #E6ECF0;
+    border-radius: 50%;
+    /*margin-top: 10px;*/
 }
 
 #coffees {
@@ -15,18 +35,18 @@ body{
     margin: 0 0 0 15px;
 }
 
-header {
-    height: 140px;
-    color: white;
-    font-family: 'Libre Baskerville', serif;
-    text-shadow:5px 5px 10px grey;
-    background-image: url("https://c1.wallpaperflare.com/preview/571/899/740/beans-coffee-food.jpg");
-    background-size: cover;
-    background-color: #2E2F37;
-}
-header h1 {
-    font-size: 80px;
-}
+/*header {*/
+/*    height: 140px;*/
+/*    color: white;*/
+/*    font-family: 'Libre Baskerville', serif;*/
+/*    text-shadow:5px 5px 10px grey;*/
+/*    background-image: url("https://c1.wallpaperflare.com/preview/571/899/740/beans-coffee-food.jpg");*/
+/*    background-size: cover;*/
+/*    background-color: #2E2F37;*/
+/*}*/
+/*header h1 {*/
+/*    font-size: 80px;*/
+/*}*/
 
 
 #theCup {
@@ -57,4 +77,8 @@ i {
 
 .card, #bigBox {
     box-shadow: 15px 15px 27px 15px lightgrey;
+}
+
+#bigBox{
+    border-top: 3px solid #c87941;
 }
